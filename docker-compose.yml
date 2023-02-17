@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  front_end:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/var/www/myportal
+      - /var/www/myportal/node_modules/
+    ports:
+      - 8080:3000
+    command: npm run dev
